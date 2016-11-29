@@ -4,8 +4,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="396.0" prefWidth="531.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="mytunesproject.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="396.0" prefWidth="531.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mytunesproject.FXMLDocumentController">
    <children>
-      <Button fx:id="btnPlay" layoutX="37.0" layoutY="38.0" mnemonicParsing="false" onAction="#bntPlay" text="Play" />
+      <Button fx:id="Playbtn" layoutX="37.0" layoutY="38.0" mnemonicParsing="false" onAction="#btnPlay" text="Play" />
+      <ListView fx:id="SongList" layoutX="37.0" layoutY="86.0" prefHeight="300.0" prefWidth="200.0" />
+      <Button fx:id="newSongBtn" layoutX="266.0" layoutY="38.0" mnemonicParsing="false" onAction="#AddNewSong" text="Add New Song" />
    </children>
 </AnchorPane>
