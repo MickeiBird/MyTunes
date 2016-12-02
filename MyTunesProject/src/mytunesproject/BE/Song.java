@@ -11,34 +11,62 @@ import java.util.ArrayList;
  *
  * @author simon
  */
-public class Song {
-private int id;   
-private String SongName;
-
-
-public Song(int id, String SongName)
+public class Song
 {
-    this.id = id;
-    this.SongName = SongName;
-    
+
+    private int id;
+    private String SongName;
+
+    private String Artist;
+    private String Location;
+
+    public Song(int id, String SongName, String Artist, String Location)
+    {
+        this.id = id;
+        this.SongName = SongName;
+
+        this.Artist = Artist;
+        this.Location = Location;
     }
 
-        
-    public int getId() {
+    public String getArtist()
+    {
+        return Artist;
+    }
+
+    public void setArtist(String Artist)
+    {
+        this.Artist = Artist;
+    }
+
+    public String getLocation()
+    {
+        return Location;
+    }
+
+    public void setLocation(String Location)
+    {
+        this.Location = Location;
+    }
+
+    public int getId()
+    {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id)
+    {
         this.id = id;
     }
 
-    public String getSongName() {
+    public String getSongName()
+    {
         return SongName;
     }
 
-    public void setSongName(String SongName) {
+    public void setSongName(String SongName)
+    {
         this.SongName = SongName;
     }
 
-    
 }

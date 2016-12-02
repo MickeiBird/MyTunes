@@ -10,16 +10,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import mytunesproject.GUI.Model.SongModel;
 
 /**
  *
  * @author simon
  */
 public class MyTunesProject extends Application {
-    
+    SongModel model = new SongModel();
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("GUI/View/FXMLDocument.fxml"));
         
         Scene scene = new Scene(root);
         
