@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="396.0" prefWidth="531.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mytunesproject.GUI.Controller.FXMLDocumentController">
+   <children>
+      <Button fx:id="Playbtn" layoutX="37.0" layoutY="38.0" mnemonicParsing="false" onAction="#btnPlay" text="Play" />
+      <Button fx:id="newSongBtn" layoutX="266.0" layoutY="38.0" mnemonicParsing="false" onAction="#AddNewSong" text="Add New Song" />
+      <Button layoutX="90.0" layoutY="38.0" mnemonicParsing="false" onAction="#btnPause" text="Pause" />
+      <TableView fx:id="TableSongs" layoutX="37.0" layoutY="84.0" prefHeight="274.0" prefWidth="225.0">
+        <columns>
+          <TableColumn fx:id="TitleClm" prefWidth="87.0" text="Title" />
+            <TableColumn fx:id="ArtistClm" prefWidth="70.0" text="Artist" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
