@@ -5,6 +5,7 @@
  */
 package mytunesproject.GUI.Controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,19 +15,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.stage.FileChooser;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import javax.swing.JFileChooser;
 import mytunesproject.BE.Song;
-import mytunesproject.BLL.SongManager;
 import mytunesproject.GUI.Model.SongModel;
-import sun.plugin.javascript.navig.Anchor;
 
 /**
  * FXML Controller class
@@ -37,7 +38,7 @@ public class FXMLDocumentController implements Initializable
 {
 
     private SongModel model;
-    
+
     @FXML
     private Button Playbtn;
 
@@ -47,8 +48,7 @@ public class FXMLDocumentController implements Initializable
     final JFileChooser fc = new JFileChooser();
     private Window stage;
     private Object FXMLController;
-    @FXML
-    private TableColumn<Song, Anchor> IdClm;
+
     @FXML
     private TableColumn<Song, String> TitleClm;
     @FXML
@@ -56,6 +56,7 @@ public class FXMLDocumentController implements Initializable
     @FXML
     public TableView<Song> TableSongs;
 
+    
     /**
      * Initializes the controller class.
      */
@@ -63,18 +64,19 @@ public class FXMLDocumentController implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         model = new SongModel();
+        TableSongs.setItems(model.getSongList());
+        TitleClm.setCellValueFactory(cellData -> cellData.getValue().songNameProperty());
+        ArtistClm.setCellValueFactory(cellData -> cellData.getValue().artistProperty());
     }
-
-    @FXML
-    private void btnPlay(ActionEvent event)
-    {
-        //model.play();
-    }
+    
+  
 
     @FXML
     private void btnPause(ActionEvent event)
     {
-        //song.pause();
+      Song song = TableSongs.getSelectionModel().getSelectedItem();
+      model.pause(song);
+      
     }
 
     @FXML
@@ -97,11 +99,25 @@ public class FXMLDocumentController implements Initializable
 
         stagePatientView.show();
     }
-
+    
+    
     @FXML
-    public void readDataIntoList()
+    private void btnPlay(ActionEvent event)
     {
-        
+      
+      if (!TableSongs.getSelectionModel().isEmpty())
+      {
+          Song song = TableSongs.getSelectionModel().getSelectedItem();
+          model.play(song);
+      }
+      else
+      {
+          System.out.println("no song selected");
+          
+      }
     }
 
+    
+
+    
 }

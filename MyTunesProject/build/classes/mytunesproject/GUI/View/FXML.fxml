@@ -20,6 +20,7 @@
       <ComboBox fx:id="CategoryBox" layoutX="96.0" layoutY="171.0" prefWidth="150.0" />
       <Label layoutX="17.0" layoutY="351.0" text="Id:" />
       <TextField fx:id="IdField" layoutX="97.0" layoutY="347.0" />
-      <Button layoutX="534.0" layoutY="360.0" mnemonicParsing="false" onAction="#btnSave" text="Save" />
+      <Button layoutX="432.0" layoutY="360.0" mnemonicParsing="false" onAction="#btnSave" text="Save &amp; Close" />
+      <Button layoutX="528.0" layoutY="360.0" mnemonicParsing="false" text="Button" />
    </children>
 </AnchorPane>

@@ -116,17 +116,7 @@ public class SongManager {
   
   
  
-public void play()
-{
-    
-    mediaplayer.play();
-    
-     
-}
-public void pause()
-{
-    mediaplayer.pause();
-}
+
 
     
 }
